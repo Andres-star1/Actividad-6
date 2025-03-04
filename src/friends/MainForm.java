@@ -152,7 +152,7 @@ public class MainForm extends javax.swing.JFrame {
             
             RandomAccessFile raf = new  RandomAccessFile(file, "rw");
             boolean found = false;
-            
+            JOptionPane.showMessageDialog(null,"Contacto añadido","INFORMATION_MESSAGE", JOptionPane.INFORMATION_MESSAGE);
             while ((raf.getFilePointer() < raf.length())== true) {
                 
                 nameNumberString = raf.readLine();
@@ -164,8 +164,7 @@ public class MainForm extends javax.swing.JFrame {
                 
                 if (name.equals(newName)|| number == newNumber){
                    found = true;
-                   JOptionPane.showMessageDialog(null,"Registro existe","INFORMATION_MESSAGE",
-                   JOptionPane.INFORMATION_MESSAGE);
+                   
                     
                    break;
                
@@ -184,7 +183,7 @@ public class MainForm extends javax.swing.JFrame {
 		raf.writeBytes(System.lineSeparator());
 
 				
-		JOptionPane.showMessageDialog(null,"Contacto añadido","INFORMATION_MESSAGE", JOptionPane.INFORMATION_MESSAGE);
+		
                 txtName.setText("");
                 txtNumber.setText("");
 
@@ -235,7 +234,7 @@ public class MainForm extends javax.swing.JFrame {
 	    }
             RandomAccessFile raf = new RandomAccessFile(file, "r");
 	    boolean found = false;
-             // JOptionPane.showMessageDialog(null, "El contacto no existe", "Información", JOptionPane.INFORMATION_MESSAGE);
+             
 			
 	    while (raf.getFilePointer() < raf.length()) {
                 
@@ -264,13 +263,11 @@ public class MainForm extends javax.swing.JFrame {
 		{
 
 		  System.out.println(ioe);
-                //JOptionPane.showMessageDialog(null,"Ocurrio un error",
-                //"INFORMATION_MESSAGE", JOptionPane.INFORMATION_MESSAGE);
+                ;
 		}
 		catch (NumberFormatException nef)
 		{
-                   //JOptionPane.showMessageDialog(null,"Formato de datos no adecuado",
-                   //"INFORMATION_MESSAGE", JOptionPane.INFORMATION_MESSAGE);
+                   
 		   System.out.println(nef);
 		}
     }//GEN-LAST:event_btnReadActionPerformed
@@ -368,8 +365,8 @@ public class MainForm extends javax.swing.JFrame {
 				
 				tmpFile.delete();
 
-				 //JOptionPane.showMessageDialog(null,"contacto eliminado",
-                                 //"INFORMATION_MESSAGE", JOptionPane.INFORMATION_MESSAGE);
+				 JOptionPane.showMessageDialog(null,"contacto eliminado",
+                                 "INFORMATION_MESSAGE", JOptionPane.INFORMATION_MESSAGE);
                                  txtName.setText("");
                                  txtNumber.setText("");
 			}
@@ -381,9 +378,7 @@ public class MainForm extends javax.swing.JFrame {
 				
 				raf.close();
 
-				// Print the message
-				 //JOptionPane.showMessageDialog(null,"El contacto no existe",
-                                 //"INFORMATION_MESSAGE", JOptionPane.INFORMATION_MESSAGE);
+				 
                                  
                                  
 			}
@@ -463,12 +458,12 @@ public class MainForm extends javax.swing.JFrame {
                 raf.close();
                 tmpFile.delete();
 
-                //JOptionPane.showMessageDialog(null,"Friend Updated",
-                // "INFORMATION_MESSAGE", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null,"Friend Updated",
+                 "INFORMATION_MESSAGE", JOptionPane.INFORMATION_MESSAGE);
             } else {
                 raf.close();
-                //JOptionPane.showMessageDialog(null,"El contacto no existe",
-                // "INFORMATION_MESSAGE", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(null,"El contacto no existe",
+                 "INFORMATION_MESSAGE", JOptionPane.INFORMATION_MESSAGE);
             }
         } catch (IOException ioe) {
             System.out.println(ioe);
